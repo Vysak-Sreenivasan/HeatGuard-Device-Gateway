@@ -1,0 +1,162 @@
+devices:
+  - id: hp_living_1
+    name: "Living Room Main Heat Pump"
+    type: "heat_pump"
+    room: "living_room"
+    zone: "ground_floor"
+    tags: ["primary", "hvac"]
+    online: true
+    critical: false
+    power: "on"
+    mode: "heat"
+    setpoint_c: 21.0
+    current_temp_c: 20.8
+    limits:
+      min_setpoint_c: 16.0
+      max_setpoint_c: 30.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []
+
+  - id: hp_living_2
+    name: "Living Room Secondary Heat Pump"
+    type: "heat_pump"
+    room: "living_room"
+    zone: "ground_floor"
+    tags: ["secondary", "hvac"]
+    online: true
+    critical: false
+    power: "on"
+    mode: "heat"
+    setpoint_c: 21.0
+    current_temp_c: 21.0
+    limits:
+      min_setpoint_c: 16.0
+      max_setpoint_c: 30.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []
+
+  - id: hp_living_3
+    name: "Living Room Radiant Booster"
+    type: "heat_pump"
+    room: "living_room"
+    zone: "ground_floor"
+    tags: ["booster", "radiant"]
+    online: true
+    critical: false
+    power: "off"
+    mode: "heat"
+    setpoint_c: 20.0
+    current_temp_c: 20.5
+    limits:
+      min_setpoint_c: 16.0
+      max_setpoint_c: 30.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []
+
+  - id: hp_bed_1
+    name: "Master Bedroom Heat Pump"
+    type: "heat_pump"
+    room: "bedroom_master"
+    zone: "upper_floor"
+    tags: ["bedroom", "hvac"]
+    online: true
+    critical: false
+    power: "on"
+    mode: "auto"
+    setpoint_c: 19.5
+    current_temp_c: 19.4
+    limits:
+      min_setpoint_c: 16.0
+      max_setpoint_c: 28.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []
+
+  - id: hp_bed_2
+    name: "Guest Bedroom Heat Pump"
+    type: "heat_pump"
+    room: "bedroom_guest"
+    zone: "upper_floor"
+    tags: ["guest", "hvac"]
+    online: true
+    critical: false
+    power: "off"
+    mode: "heat"
+    setpoint_c: 18.0
+    current_temp_c: 18.2
+    limits:
+      min_setpoint_c: 16.0
+      max_setpoint_c: 28.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []
+
+  - id: hp_kitchen_1
+    name: "Kitchen Heat Pump"
+    type: "heat_pump"
+    room: "kitchen"
+    zone: "ground_floor"
+    tags: ["kitchen", "hvac"]
+    online: true
+    critical: false
+    power: "on"
+    mode: "heat"
+    setpoint_c: 20.0
+    current_temp_c: 20.2
+    limits:
+      min_setpoint_c: 16.0
+      max_setpoint_c: 28.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []
+
+  - id: hp_office_1
+    name: "Main Office Heat Pump"
+    type: "heat_pump"
+    room: "office"
+    zone: "ground_floor"
+    tags: ["office", "work"]
+    online: true
+    critical: false
+    power: "on"
+    mode: "heat"
+    setpoint_c: 21.5
+    current_temp_c: 21.3
+    limits:
+      min_setpoint_c: 16.0
+      max_setpoint_c: 28.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []
+
+  - id: hp_office_2
+    name: "Back Office Heat Pump"
+    type: "heat_pump"
+    room: "office_annex"
+    zone: "ground_floor"
+    tags: ["office", "annex"]
+    online: false
+    critical: false
+    power: "off"
+    mode: "heat"
+    setpoint_c: 19.0
+    current_temp_c: 17.5
+    limits:
+      min_setpoint_c: 16.0
+      max_setpoint_c: 28.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []
+
+  - id: pump_pool_1
+    name: "Outdoor Pool Heat Pump"
+    type: "pool_heat_pump"
+    room: "outdoor_pool"
+    zone: "outdoor"
+    tags: ["pool", "critical", "water_circulation"]
+    online: true
+    critical: true
+    power: "on"
+    mode: "heat"
+    setpoint_c: 28.0
+    current_temp_c: 27.8
+    limits:
+      min_setpoint_c: 15.0
+      max_setpoint_c: 35.0
+      allowed_modes: ["heat", "cool", "auto"]
+    alarms: []

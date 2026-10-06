@@ -1,0 +1,218 @@
+[
+  {
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": null,
+      "readOnlyHint": false,
+      "title": null
+    },
+    "description": "Execute an approved, idempotent absolute control operation on a device.",
+    "input_schema": {
+      "properties": {
+        "approval_token": {
+          "title": "Approval Token",
+          "type": "string"
+        },
+        "device_id": {
+          "title": "Device Id",
+          "type": "string"
+        },
+        "idempotency_key": {
+          "title": "Idempotency Key",
+          "type": "string"
+        },
+        "instruction_id": {
+          "title": "Instruction Id",
+          "type": "string"
+        },
+        "operation_id": {
+          "title": "Operation Id",
+          "type": "string"
+        },
+        "params": {
+          "additionalProperties": true,
+          "title": "Params",
+          "type": "object"
+        }
+      },
+      "required": [
+        "device_id",
+        "operation_id",
+        "instruction_id",
+        "params",
+        "idempotency_key",
+        "approval_token"
+      ],
+      "title": "execute_operationsArguments",
+      "type": "object"
+    },
+    "name": "execute_operations"
+  },
+  {
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": null,
+      "readOnlyHint": true,
+      "title": null
+    },
+    "description": "List all available heat pump and HVAC devices in the fleet with status and location.",
+    "input_schema": {
+      "properties": {},
+      "title": "get_available_devicesArguments",
+      "type": "object"
+    },
+    "name": "get_available_devices"
+  },
+  {
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": null,
+      "readOnlyHint": true,
+      "title": null
+    },
+    "description": "Retrieve active alarms and warnings for a specific device, or all devices if device_id is omitted.",
+    "input_schema": {
+      "properties": {
+        "device_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Device Id"
+        }
+      },
+      "title": "get_device_alarmsArguments",
+      "type": "object"
+    },
+    "name": "get_device_alarms"
+  },
+  {
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": null,
+      "readOnlyHint": true,
+      "title": null
+    },
+    "description": "Retrieve historical statistical telemetry aggregation (count, mean, std, percentiles) for a parameter over specified days.",
+    "input_schema": {
+      "properties": {
+        "days": {
+          "title": "Days",
+          "type": "integer"
+        },
+        "device_id": {
+          "title": "Device Id",
+          "type": "string"
+        },
+        "parameter": {
+          "title": "Parameter",
+          "type": "string"
+        }
+      },
+      "required": [
+        "device_id",
+        "parameter",
+        "days"
+      ],
+      "title": "get_sensor_historyArguments",
+      "type": "object"
+    },
+    "name": "get_sensor_history"
+  },
+  {
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": null,
+      "readOnlyHint": true,
+      "title": null
+    },
+    "description": "Retrieve current real-time telemetry data, state, and sensor readings for a device.",
+    "input_schema": {
+      "properties": {
+        "device_id": {
+          "title": "Device Id",
+          "type": "string"
+        },
+        "parameters": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parameters"
+        }
+      },
+      "required": [
+        "device_id"
+      ],
+      "title": "get_telemetry_dataArguments",
+      "type": "object"
+    },
+    "name": "get_telemetry_data"
+  },
+  {
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": null,
+      "readOnlyHint": true,
+      "title": null
+    },
+    "description": "List supported control operations, instructions, parameter schemas, and limits for a device.",
+    "input_schema": {
+      "properties": {
+        "device_id": {
+          "title": "Device Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "device_id"
+      ],
+      "title": "list_operationsArguments",
+      "type": "object"
+    },
+    "name": "list_operations"
+  },
+  {
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": null,
+      "readOnlyHint": true,
+      "title": null
+    },
+    "description": "List measurable parameters, sensors, and telemetry points available for a specific device.",
+    "input_schema": {
+      "properties": {
+        "device_id": {
+          "title": "Device Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "device_id"
+      ],
+      "title": "list_parametersArguments",
+      "type": "object"
+    },
+    "name": "list_parameters"
+  }
+]

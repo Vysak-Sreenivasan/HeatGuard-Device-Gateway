@@ -1,0 +1,1 @@
+"""HeatGuard Device Gateway package."""
